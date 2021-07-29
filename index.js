@@ -51,3 +51,55 @@
 
 // console.log(arr1.every(belowThreshold));
 // // # => true
+
+///////////////////////////////////////
+// FILTER()
+///////////////////////////////////////
+// const words = [
+//   "spray",
+//   "limit",
+//   "elite",
+//   "exuberant",
+//   "destruction",
+//   "present",
+// ];
+
+// const result = words.filter((word) => word.length > 6);
+// console.log(result);
+// // OUTPUT: ['exuberant', 'destruction', 'present']
+
+///////////////////////////////////////
+// MAP()
+///////////////////////////////////////
+// const words = [
+//   "spray",
+//   "limit",
+//   "elite",
+//   "exuberant",
+//   "destruction",
+//   "present",
+// ];
+
+// const map1 = words.map((word) => word.length > 6);
+// console.log(map1);
+// // OUTPUT: [false, false, false, true, true, true]
+
+// FIZZ BUZZ
+// divisble by 3 = fizz
+// div by 5 = buzz
+// div by both 3 and 5 = fizzBuzz
+// not divisble by 3 or 5 = input
+
+const output = fizzBuzz(false);
+console.log(output);
+
+function fizzBuzz(input) {
+  if (typeof input !== "number") return NaN;
+  if (input % 3 === 0 && input % 5 === 0) return "FizzBuzz";
+
+  if (input % 3 === 0) return "Fizz";
+
+  if (input % 5 === 0) return "Buzz";
+
+  return input;
+}
