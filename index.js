@@ -90,16 +90,80 @@
 // div by both 3 and 5 = fizzBuzz
 // not divisble by 3 or 5 = input
 
-const output = fizzBuzz(false);
-console.log(output);
+// const output = fizzBuzz(false);
+// console.log(output);
 
-function fizzBuzz(input) {
-  if (typeof input !== "number") return NaN;
-  if (input % 3 === 0 && input % 5 === 0) return "FizzBuzz";
+// function fizzBuzz(input) {
+//   if (typeof input !== "number") return NaN;
+//   if (input % 3 === 0 && input % 5 === 0) return "FizzBuzz";
 
-  if (input % 3 === 0) return "Fizz";
+//   if (input % 3 === 0) return "Fizz";
 
-  if (input % 5 === 0) return "Buzz";
+//   if (input % 5 === 0) return "Buzz";
 
-  return input;
-}
+//   return input;
+// }
+
+///////////////////////////////
+// mosh examples
+// Math.floor(1.3)
+// 12 points -> suspended
+//////////////////////////////
+// checkSpeed(71);
+
+// function checkSpeed(speed) {
+//   const speedLimit = 70;
+//   const kmPerPoint = 5;
+
+//   if (speed < speedLimit + kmPerPoint) console.log("Ok");
+//   else {
+//     let points = Math.floor((speed - speedLimit) / kmPerPoint);
+//     if (points >= 12) console.log("Licensed suspended");
+//     else console.log("Points", points);
+//   }
+// }
+
+// // FIND()
+// const arr1 = [5, 12, 8, 130, 44];
+
+// const found = arr1.find((element) => element > 10);
+// console.log(found);
+
+// // CODE WARS EXERCISES JAVASCRIPT - FRIDAY, JULY 30th
+// showNumbers(10);
+
+// function showNumbers(limit) {
+//   for (let i = 0; i <= limit; i++) {
+//     if (i % 2 === 0) console.log(i, "EVEN");
+//     else console.log(i, "ODD");
+
+//     const message = i % 2 === 0 ? "EVEN" : "ODD";
+//     console.log(i, message);
+//   }
+// }
+
+// const isActive = true;
+// const name = 'Mosh'; // Truthy
+// const name = ''; // False
+// // Falsy = undefined, null, '', false, NaN
+
+// if (name) console.log('Hello';)
+
+// // create function counts the number of truthy values
+// function countTruthy(array) {
+//   let count = 0;
+//   for (let value of array) if (value) count++;
+//   return count;
+// }
+
+// CODE WARS PRACTICE 1: remove an exclamation mark from the end of a string. Assume that the input data is always a string, no need to verify it.
+
+// function remove(s) {
+//   return s[s.length - 1] === "!" ? s.slice(0, -1) : s;
+// }
+
+// // slice()
+// const animals = ["cat", "dog", "bird", "rat", "raven"];
+
+// console.log(animals.slice(2)); // # -> ['bird', 'rat', 'raven']
+// console.log(animals.slice(2, 4)); // # -> ['bird', 'rat']
