@@ -167,3 +167,53 @@
 
 // console.log(animals.slice(2)); // # -> ['bird', 'rat', 'raven']
 // console.log(animals.slice(2, 4)); // # -> ['bird', 'rat']
+
+// IMPORT CONCEPTS JS
+// //1
+// const favFood = ["chocolate", "avocado", "honey crisp", "bouchey"];
+// console.log(...favFood);
+
+// //2 FOR ... OF ITERATOR
+// const toolBox = ["hammer", "screwdriver", "saw"];
+// for (const item of toolBox) {
+//   console.log(item);
+// }
+
+// //3 INCLUDES() - returns true or false
+// const garage = ["BMW", "AUDI", "VOLVO"];
+// const findCar = garage.includes("BMW");
+// console.log(findCar); // # -> true
+
+// // 4 some() - checks if some elements exists and returns true/false
+// const age = [16, 14, 18];
+// age.some(function (person) {
+//   return person >= 18; // # -> true
+// });
+
+// // with ES6 you have Arrow functions
+// age.some((person) => person >= 18);
+
+// // 5 EVERY() - checks every item and returns true or false
+// const age = [15, 20, 41];
+// age.every((person) => person >= 18); // # -> false
+
+//6 filter() - creates a new array with all elements that pass the test
+// const prices = [25, 30, 15, 55, 40, 10];
+
+// console.log(prices.filter((price) => price >= 30)); // # -> [30, 55, 40]
+
+// // 7 MAP() - similar to filter() in terms of returning a new array. However, the only difference is that it is used to modify items
+// const productPriceList = [200, 350, 1500, 5000];
+
+// console.log(productPriceList.map((item) => item * 0.75));
+// // # -> [150, 262.50, 1125, 3750]
+
+// 8 reduce() - can be used to transform an array into something else, which could be an integer, an object, a chain of promises ...etc. For practical reasons, a simple use case would be to sum a list of integers. In short, it "reduces" the whole array into one value.
+const weeklyExpenses = [200, 350, 1500, 5000, 450, 680, 350];
+
+// weeklyExpenses.reduce(function(first, last) {
+//     return first + last;
+// });
+
+// ES6
+console.log(weeklyExpenses.reduce((first, last) => first + last));
