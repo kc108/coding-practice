@@ -343,3 +343,40 @@
 // } else {
 //   console.log("Not a valid day!");
 // }
+
+/////////////////////////////////
+// STATEMENTS AND EXPRESSIONS
+/////////////////////////////////
+// expressions produce values
+// statements have actions to perform
+
+/////////////////////////////////
+// TERNARY OPERATORS
+/////////////////////////////////
+const age = 23;
+age >= 18;
+//   ? console.log("I like to drink wine.")
+//   : console.log("I like to drink water.");
+
+/////////////////////////////////
+// TERNARY OPERATOR EXAMPLE 2
+/////////////////////////////////
+const drink = age >= 18 ? "wine" : "water";
+console.log(drink);
+
+/////////////////////////////////
+// TERNARY OPERATOR EXAMPLE 3 - longer to write than the above example.
+/////////////////////////////////
+let drink2;
+if (age >= 18) {
+  drink2 = "wine";
+} else {
+  drink2 = "water";
+}
+
+console.log(drink2);
+
+/////////////////////////////////
+// USING TERNARY OPERATOR IN A TEMPLATE LITERAL
+/////////////////////////////////
+console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`);
