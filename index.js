@@ -353,30 +353,121 @@
 /////////////////////////////////
 // TERNARY OPERATORS
 /////////////////////////////////
-const age = 23;
-age >= 18;
-//   ? console.log("I like to drink wine.")
+// const age = 23;
+// age >= 18;
+// //   ? console.log("I like to drink wine.")
 //   : console.log("I like to drink water.");
 
 /////////////////////////////////
 // TERNARY OPERATOR EXAMPLE 2
 /////////////////////////////////
-const drink = age >= 18 ? "wine" : "water";
-console.log(drink);
+// const drink = age >= 18 ? "wine" : "water";
+// console.log(drink);
 
 /////////////////////////////////
 // TERNARY OPERATOR EXAMPLE 3 - longer to write than the above example.
 /////////////////////////////////
-let drink2;
-if (age >= 18) {
-  drink2 = "wine";
-} else {
-  drink2 = "water";
-}
+// let drink2;
+// if (age >= 18) {
+//   drink2 = "wine";
+// } else {
+//   drink2 = "water";
+// }
 
-console.log(drink2);
+// console.log(drink2);
 
 /////////////////////////////////
 // USING TERNARY OPERATOR IN A TEMPLATE LITERAL
 /////////////////////////////////
-console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`);
+// Ternary operator is not a replacement for an 'else...if' expression, it is great for making a quick decision
+// console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`);
+
+/////////////////////////////////
+// CODING CHALLENGE #4
+/////////////////////////////////
+// const bill = 275;
+
+// const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
+// console.log(
+//   `The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`
+// );
+
+/////////////////////////////////
+// JAVASCRIPT ES5, ES6 AND ESNEXT
+/////////////////////////////////
+// JavaScript, Brendan Eich created first version of JS in just 10 days. It was called Mocha, but already had many fundamental features of modern JS.
+// Mocha changes to LiveScript, then to JS in order to attract Java developers. JS has almost nothing to do with Java.
+// ES5 = Released in 2009
+// ES6 = Released in 2015, many new features: the biggest update to the language ever. Official name is ES2015. ECMAScript changes to an annual release cycle in order to ship less features per update
+
+/////////////////////////////////
+// FUNCTIONS
+/////////////////////////////////
+// function fruitProcessor(apples, oranges) {
+//   console.log(apples, oranges);
+//   const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+//   return juice;
+// }
+
+// const appleJuice = fruitProcessor(5, 0);
+// console.log(appleJuice);
+
+/////////////////////////////////
+// FUNCTIONS = ES6 arrow functions were added to ES6
+/////////////////////////////////
+// const calcAge2 = function (birthYear) {
+//   return 2037 - birthYear;
+// };
+
+// // ARROW FUNCTION
+// const calcAge3 = (birthYear) => 2037 - birthYear;
+// const age3 = calcAge3(1991);
+// console.log(age3);
+
+// const yearsUntilRetirement = (birthYear, firstName) => {
+//   const age = 2037 - birthYear;
+//   const retirement = 65 - age;
+//   // return retirement;
+//   return `${firstName} retires in ${retirement} years`;
+// };
+
+// console.log(yearsUntilRetirement(1991, "Jonas"));
+// console.log(yearsUntilRetirement(1980, "Bob"));
+
+/////////////////////////////////
+// FUNCTIONS CALLING OTHER FUNCTIONS
+/////////////////////////////////
+function cutFruitPieces(fruit) {
+  return fruit * 4;
+}
+
+function fruitProcessor(apples, oranges) {
+  const applePieces = cutFruitPieces(apples);
+  const orangePieces = cutFruitPieces(oranges);
+
+  const juice = `Juice with ${applePieces} piece of apples and ${orangePieces} pieces of oranges.`;
+  return juice;
+}
+
+console.log(fruitProcessor(2, 3));
+
+// CODING CHALLENGE - JS FUNDAMENTALS PART2
+const calcAverage = (a, b, c) => (a + b + c) / 3;
+console.log(calcAverage(3, 4, 5)); // # => 4
+
+// TEST DATA 1
+const scoreDolphins = calcAverage(44, 23, 71);
+const scoreKoalas = calcAverage(65, 54, 49);
+console.log(scoreDolphins, scoreKoalas); // # => 46 56
+
+const checkWinner = function (avgDolphins, avgKoalas) {
+  if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`Dolphins win the trophy, ${avgDolphins} vs. ${avgKoalas}`);
+  } else if (avgKoalas >= 2 * avgDolphins) {
+    console.log(`Koalas win the trophy. ${avgKoalas} vs. ${avgDolphins}`);
+  } else {
+    console.log("No team wins...");
+  }
+};
+
+checkWinner(scoreDolphins, scoreKoalas); // # => 46 56 ; 'No team wins...' becuz the points are not double of either team's score
