@@ -523,32 +523,51 @@
 
 // push() -> adds something to the end of an array
 // unshift() -> adds something to the beginning of an array
-const friends = ["Michael", "Steven", "Peter"];
-const newLength = friends.push("Jay");
-console.log(friends); // # -> ["Michael", "Steven", "Peter", "Jay"]
-console.log(newLength); // # -> 4
+// const friends = ["Michael", "Steven", "Peter"];
+// const newLength = friends.push("Jay");
+// console.log(friends); // # -> ["Michael", "Steven", "Peter", "Jay"]
+// console.log(newLength); // # -> 4
 
-friends.unshift("John");
-console.log(friends); // # -> ["John" ,"Michael", "Steven", "Peter", "Jay"]
+// friends.unshift("John");
+// console.log(friends); // # -> ["John" ,"Michael", "Steven", "Peter", "Jay"]
 
-// REMOVES ELEMENTS
-// pop() - last
-// can save to a variable to be used later
-const popped = friends.pop();
-console.log(popped);
-console.log(friends); // #-> ["John" ,"Michael", "Steven", "Peter"]
+// // REMOVES ELEMENTS
+// // pop() - last
+// // can save to a variable to be used later
+// const popped = friends.pop();
+// console.log(popped);
+// console.log(friends); // #-> ["John" ,"Michael", "Steven", "Peter"]
 
-// shift() - first
-friends.shift();
-console.log(friends); // # -> ["Michael", "Steven", "Peter"]
+// // shift() - first
+// friends.shift();
+// console.log(friends); // # -> ["Michael", "Steven", "Peter"]
 
-// indexOf()
-// returns index at which an element is placed
-console.log(friends.indexOf("Steven")); // # -> 1
-console.log(friends.indexOf("Bob")); // # -> -1 because this is not in there
+// // indexOf()
+// // returns index at which an element is placed
+// console.log(friends.indexOf("Steven")); // # -> 1
+// console.log(friends.indexOf("Bob")); // # -> -1 because this is not in there
 
-friends.push(23);
-// includes() - this is an ES6 method, returns true or false
-console.log(friends.includes("Steven")); // true
-console.log(friends.includes("Bob")); // false
-console.log(friends.includes("23")); // false - because 23 is a string bc it uses strict equality
+// friends.push(23);
+// // includes() - this is an ES6 method, returns true or false
+// console.log(friends.includes("Steven")); // true
+// console.log(friends.includes("Bob")); // false
+// console.log(friends.includes("23")); // false - because 23 is a string bc it uses strict equality
+
+// if (friends.includes("Steven")) {
+//   console.log("You have a friend called Steven");
+// }
+
+//////////////////////////////////////
+// JS FUNDAMENTALS PART 2 - CODING CHALLENGE
+//////////////////////////////////////
+// const calcTip = function (bill) {
+//   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// };
+
+// ES6 - arrow function version
+const calcTip = (bill) =>
+  bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+console.log(bills, tips);
