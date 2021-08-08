@@ -434,40 +434,121 @@
 // console.log(yearsUntilRetirement(1991, "Jonas"));
 // console.log(yearsUntilRetirement(1980, "Bob"));
 
-/////////////////////////////////
-// FUNCTIONS CALLING OTHER FUNCTIONS
-/////////////////////////////////
-function cutFruitPieces(fruit) {
-  return fruit * 4;
-}
+// /////////////////////////////////
+// // FUNCTIONS CALLING OTHER FUNCTIONS
+// /////////////////////////////////
+// function cutFruitPieces(fruit) {
+//   return fruit * 4;
+// }
 
-function fruitProcessor(apples, oranges) {
-  const applePieces = cutFruitPieces(apples);
-  const orangePieces = cutFruitPieces(oranges);
+// function fruitProcessor(apples, oranges) {
+//   const applePieces = cutFruitPieces(apples);
+//   const orangePieces = cutFruitPieces(oranges);
 
-  const juice = `Juice with ${applePieces} piece of apples and ${orangePieces} pieces of oranges.`;
-  return juice;
-}
+//   const juice = `Juice with ${applePieces} piece of apples and ${orangePieces} pieces of oranges.`;
+//   return juice;
+// }
 
-console.log(fruitProcessor(2, 3));
+// console.log(fruitProcessor(2, 3));
 
-// CODING CHALLENGE - JS FUNDAMENTALS PART2
-const calcAverage = (a, b, c) => (a + b + c) / 3;
-console.log(calcAverage(3, 4, 5)); // # => 4
+// // CODING CHALLENGE - JS FUNDAMENTALS PART2
+// const calcAverage = (a, b, c) => (a + b + c) / 3;
+// console.log(calcAverage(3, 4, 5)); // # => 4
 
-// TEST DATA 1
-const scoreDolphins = calcAverage(44, 23, 71);
-const scoreKoalas = calcAverage(65, 54, 49);
-console.log(scoreDolphins, scoreKoalas); // # => 46 56
+// // TEST DATA 1
+// const scoreDolphins = calcAverage(44, 23, 71);
+// const scoreKoalas = calcAverage(65, 54, 49);
+// console.log(scoreDolphins, scoreKoalas); // # => 46 56
 
-const checkWinner = function (avgDolphins, avgKoalas) {
-  if (avgDolphins >= 2 * avgKoalas) {
-    console.log(`Dolphins win the trophy, ${avgDolphins} vs. ${avgKoalas}`);
-  } else if (avgKoalas >= 2 * avgDolphins) {
-    console.log(`Koalas win the trophy. ${avgKoalas} vs. ${avgDolphins}`);
-  } else {
-    console.log("No team wins...");
-  }
-};
+// const checkWinner = function (avgDolphins, avgKoalas) {
+//   if (avgDolphins >= 2 * avgKoalas) {
+//     console.log(`Dolphins win the trophy, ${avgDolphins} vs. ${avgKoalas}`);
+//   } else if (avgKoalas >= 2 * avgDolphins) {
+//     console.log(`Koalas win the trophy. ${avgKoalas} vs. ${avgDolphins}`);
+//   } else {
+//     console.log("No team wins...");
+//   }
+// };
 
-checkWinner(scoreDolphins, scoreKoalas); // # => 46 56 ; 'No team wins...' becuz the points are not double of either team's score
+// checkWinner(scoreDolphins, scoreKoalas); // # => 46 56 ; 'No team wins...' becuz the points are not double of either team's score
+
+////////////////////////////////////
+// INTRO TO ARRAYS
+////////////////////////////////////
+// const friends = ["Michael", "Steven", "Peter"];
+// console.log(friends);
+// // ['Michael', 'Steven', 'Peter']
+
+// // another way to create an Array
+// const years = new Array(1991, 1984, 2008, 2020);
+// console.log(years);
+// // [1991, 1984, 2008, 2020]
+
+// console.log(friends[0]); // 'Michael'
+// console.log(friends[2]); // 'Peter'
+
+// console.log(friends.length); // # => 3 (returns the number of elements in an array);
+
+// console.log(friends[friends.length - 1]); // # => 'Peter'
+
+// MUTATING THE ARRAY
+// friends[2] = "Jay";
+// console.log(friends); // # => ['Michael', 'Steven', 'Jay'];
+// // Only primitive values are not immutable, arrays can be changed. This is becuz of the way JS stores things in memory
+// // cannot replace the entire array // # => friends = ['Bob', 'Alice']
+
+// const firstName = "Jonas";
+// // friends is inserted from the array above!!!
+// const jonas = [firstName, "Schmedtmann", 2037 - 1991, "teacher", friends];
+// console.log(jonas);
+
+// // ARRAY EXERCISE
+// const calcAge = function (birthYear) {
+//   return 2037 - birthYear;
+// };
+
+// const years1 = [1990, 1967, 2002, 2010, 2018];
+
+// console.log(calcAge(years)); // NaN
+
+// const age1 = calcAge(years[0]);
+// const age2 = calcAge(years[1]);
+// const age3 = calcAge(years[years.length - 1]);
+// console.log(age1, age2, age3); // 46 53 17
+
+//////////////////////////////////////////////
+// BASIC ARRAY OPERATION (METHODS)
+//////////////////////////////////////////////
+// ADDS ELEMENTS
+
+// push() -> adds something to the end of an array
+// unshift() -> adds something to the beginning of an array
+const friends = ["Michael", "Steven", "Peter"];
+const newLength = friends.push("Jay");
+console.log(friends); // # -> ["Michael", "Steven", "Peter", "Jay"]
+console.log(newLength); // # -> 4
+
+friends.unshift("John");
+console.log(friends); // # -> ["John" ,"Michael", "Steven", "Peter", "Jay"]
+
+// REMOVES ELEMENTS
+// pop() - last
+// can save to a variable to be used later
+const popped = friends.pop();
+console.log(popped);
+console.log(friends); // #-> ["John" ,"Michael", "Steven", "Peter"]
+
+// shift() - first
+friends.shift();
+console.log(friends); // # -> ["Michael", "Steven", "Peter"]
+
+// indexOf()
+// returns index at which an element is placed
+console.log(friends.indexOf("Steven")); // # -> 1
+console.log(friends.indexOf("Bob")); // # -> -1 because this is not in there
+
+friends.push(23);
+// includes() - this is an ES6 method, returns true or false
+console.log(friends.includes("Steven")); // true
+console.log(friends.includes("Bob")); // false
+console.log(friends.includes("23")); // false - because 23 is a string bc it uses strict equality
