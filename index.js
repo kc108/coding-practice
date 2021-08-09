@@ -621,3 +621,89 @@
 //     "Wrong request! Choose between firstName, lastName, age, job, and friends."
 //   );
 // }
+
+// ///////////////////////////////
+// // OBJECT METHODS
+// ///////////////////////////////
+// const jonas = {
+//   firstName: "Jonas",
+//   lastName: "Scmedtmann",
+//   birthYear: 1991,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+//   hasDriversLicense: true,
+
+//   // GOOD PRACTICE TO USE THIS INCASE SOMETHING CHANGES IN THE CODE
+//   calcAge: function () {
+//     console.log(this);
+//     return 2037 - this.birthYear;
+//   }
+
+// };
+
+//   // ...or, ...can also do this as a best practice
+//   calcAge: function () {
+//     this.age = 2037 - this.birthYear;
+//     return this.age;
+//   },
+// };
+
+// // SIMILAR TO THE BELOW FUNCTION
+// const calcAge = function (birthYear) {
+//   return 2037 - birthYear;
+// };
+
+// // EITHER OF THESE WILL WORK... ******** review ***********
+// console.log(jonas.calcAge());
+// console.log(jonas.calcAge());
+// console.log(jonas.calcAge());
+// console.log(jonas["calcAge"](1991));
+
+// //for (...or example above)
+// console.log(jonas.age);
+
+/////////////////////////////////////////
+// CODING CHALLENGE
+/////////////////////////////////////////
+// REMEMBER: BMI = mass / height ** 2 = mass / (height * height)
+// mass in kg & height in meters
+
+const mark = {
+  fullName: "Mark Miller",
+  mass: 78,
+  height: 1.69,
+
+  calcBMI: function () {
+    console.log(this);
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  },
+};
+
+const john = {
+  fullName: "John Smith",
+  mass: 92,
+  height: 1.95,
+
+  calcBMI: function () {
+    console.log(this);
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  },
+};
+
+mark.calcBMI();
+console.log(mark.bmi);
+
+john.calcBMI();
+console.log(john.bmi);
+
+// "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!"
+if (mark.bmi > john.bmi) {
+  console.log(`${mark.fullName}'s BMI (${mark.bmi})
+  is higher than ${john.fullName}'s BMI (${john.bmi})
+  `);
+} else if (john.bmi > mark.bmi) {
+  console.log(`${john.fullName}'s BMI (${john.bmi})
+  `);
+}
