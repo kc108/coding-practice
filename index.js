@@ -668,42 +668,120 @@
 // REMEMBER: BMI = mass / height ** 2 = mass / (height * height)
 // mass in kg & height in meters
 
-const mark = {
-  fullName: "Mark Miller",
-  mass: 78,
-  height: 1.69,
+// const mark = {
+//   fullName: "Mark Miller",
+//   mass: 78,
+//   height: 1.69,
 
-  calcBMI: function () {
-    console.log(this);
-    this.bmi = this.mass / this.height ** 2;
-    return this.bmi;
-  },
-};
+//   calcBMI: function () {
+//     console.log(this);
+//     this.bmi = this.mass / this.height ** 2;
+//     return this.bmi;
+//   },
+// };
 
-const john = {
-  fullName: "John Smith",
-  mass: 92,
-  height: 1.95,
+// const john = {
+//   fullName: "John Smith",
+//   mass: 92,
+//   height: 1.95,
 
-  calcBMI: function () {
-    console.log(this);
-    this.bmi = this.mass / this.height ** 2;
-    return this.bmi;
-  },
-};
+//   calcBMI: function () {
+//     console.log(this);
+//     this.bmi = this.mass / this.height ** 2;
+//     return this.bmi;
+//   },
+// };
 
-mark.calcBMI();
-console.log(mark.bmi);
+// mark.calcBMI();
+// console.log(mark.bmi);
 
-john.calcBMI();
-console.log(john.bmi);
+// john.calcBMI();
+// console.log(john.bmi);
 
-// "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!"
-if (mark.bmi > john.bmi) {
-  console.log(`${mark.fullName}'s BMI (${mark.bmi})
-  is higher than ${john.fullName}'s BMI (${john.bmi})
-  `);
-} else if (john.bmi > mark.bmi) {
-  console.log(`${john.fullName}'s BMI (${john.bmi})
-  `);
-}
+// // "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!"
+// if (mark.bmi > john.bmi) {
+//   console.log(`${mark.fullName}'s BMI (${mark.bmi})
+//   is higher than ${john.fullName}'s BMI (${john.bmi})
+//   `);
+// } else if (john.bmi > mark.bmi) {
+//   console.log(`${john.fullName}'s BMI (${john.bmi})
+//   `);
+// }
+
+////////////////////////////////////
+// LOOOOOOPS
+////////////////////////////////////
+// before the code is executed 1st condition is evaluated
+
+// FOR LOOP KEEPS RUNNING WHILE CONDITION IS TRUE
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep}`);
+// }
+
+//
+// const jonas = [
+//   "Jonas",
+//   "Schmedtmann",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+//   true,
+// ];
+
+// const types = [];
+
+// for (let i = 0; i < jonas.length; i++) {
+//   console.log(jonas[i], typeof jonas[i]);
+
+// // This stores the types of objects in object from jonas array: FIRST WAY
+// types[i] = typeof jonas[i];
+
+// second way
+//   types.push(typeof jonas[i]);
+// }
+
+// console.log(types);
+
+// EXAMPLE 2
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++) {
+//   ages.push(2037 - years[i]);
+// }
+
+// console.log(ages);
+
+// continue and break
+// similar example to above
+// console.log("--- ONLY STRINGS ---");
+// for (let i = 0; i < jonas.length; i++) {
+//   if (typeof jonas[i] !== "string") continue;
+
+//   console.log(jonas[i], typeof jonas[i]);
+// }
+
+// console.log("--- BREAK WITH NUMBER ---");
+// for (let i = 0; i < jonas.length; i++) {
+//   if (typeof jonas[i] !== "string") continue;
+
+//   console.log(jonas[i], typeof jonas[i]);
+// }
+
+// thinking about how to define counter and updating
+// const jonas = [
+//   "Jonas",
+//   "Schmedtmann",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+//   true,
+// ];
+
+// for (let i = jonas.length - 1; i >= 0; i--) {
+//   console.log(i, jonas[i]);
+// }
+
+//////////////////////////////////////
+//
+//////////////////////////////////////
