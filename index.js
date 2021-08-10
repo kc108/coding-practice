@@ -782,6 +782,47 @@
 //   console.log(i, jonas[i]);
 // }
 
+// //////////////////////////////////////
+// // EXERCISE COUNTER EXAMPLE 2
+// //////////////////////////////////////
+// for (let exercise = 1; exercise < 4; exercise++) {
+//   console.log(`-------------Starting exercise ${exercise}
+//   `);
+
+//   for (let rep = 1; rep < 6; rep++) {
+//     console.log(`Exercise ${exercise}: Lifting weight repetition ${rep}`);
+//   }
+// }
+
 //////////////////////////////////////
-//
+// WHILE LOOP
 //////////////////////////////////////
+// A FOR LOOP FOR A COMPARISON OF THE WHILE LOOP BELOW - essentially the same
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep}
+//   `);
+// }
+
+// while loop - more versatile because it does NOT need a counter.. it just needs a condition
+let rep = 1;
+
+while (rep <= 10) {
+  console.log(`WHILE: Lifting weights repetition ${rep}
+  `);
+  rep++;
+}
+
+// WHILE LOOP WITHOUT A COUNTER
+// keep rolling a dice until you get a 6 & then stop rolling.
+// let dice = Math.random() * 6;
+// console.log(dice);
+// this is a decimal
+
+// INSTRUCTOR SAID THE LOGIC WILL BE EXPLAINED LATER
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+}
